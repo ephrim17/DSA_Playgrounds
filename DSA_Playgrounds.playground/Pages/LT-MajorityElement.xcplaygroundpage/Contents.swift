@@ -29,7 +29,25 @@ class Solution {
 }
 
 
-let input = [3,3,4]
+let input = [2,2,1,1,1,2,2]
 
 let s = Solution()
 s.majorityElement(input)
+
+func majorityElement(input: [Int]) {
+    
+    var mjCount = 0
+    var winner = 0
+    var current = input[0]
+    
+    for item in input {
+        if item == current {
+            mjCount += 1
+            winner = item
+        }
+        current = item
+    }
+    print("mjCount \(mjCount) and winner \(winner)")
+}
+
+majorityElement(input: input)

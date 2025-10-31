@@ -10,20 +10,23 @@ class Solution {
         var maxProfit = 0
         
         for currentPrice in prices {
-            if buyingPrice > currentPrice{
-                buyingPrice = currentPrice
-            } else {
-                currentProfit = currentPrice - buyingPrice
-                if currentProfit > maxProfit {
-                    maxProfit = currentProfit
-                }
-            }
+            buyingPrice =  min(buyingPrice, currentPrice)
+            currentProfit = max(currentPrice - buyingPrice, currentProfit)
+            
+//            if buyingPrice > currentPrice{
+//                buyingPrice = currentPrice
+//            } else {
+//                currentProfit = currentPrice - buyingPrice
+//                if currentProfit > maxProfit {
+//                    maxProfit = currentProfit
+//                }
+//            }
         }
-        return maxProfit
+        return currentProfit
     }
 }
 
-let input = [7,1,5,3,6,4]
+let input = [7,6,4,3,1]
 
 let s = Solution()
 print("<<< FINAL \(s.maxProfit(input))")
