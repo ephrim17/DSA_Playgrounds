@@ -13,10 +13,14 @@ class Solution {
             result[i] = prefixProduct
             prefixProduct *= nums[i]
         }
+        
+        print("result array first pass")
+        print(result)
 
         // Second pass: Calculate right products and combine
         var suffixProduct = 1
         for i in (0..<n).reversed() {
+            print("<<< For i value \(i)")
             result[i] *= suffixProduct
             suffixProduct *= nums[i]
         }

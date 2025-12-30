@@ -13,7 +13,7 @@ class Solution {
             } else if n <= j {
                 j = n
             } else {
-                result = true
+                return result
             }
         }
         
@@ -23,6 +23,6 @@ class Solution {
 
 
 let s = Solution()
-let nums = [2,1,5,0,4,6]
+let nums = [1,2,3,4,5,6]
 print(" <<< Result \(s.increasingTriplet(nums))")
 
